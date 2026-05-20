@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const mutualFundsController_1 = require("../controllers/mutualFundsController");
+const router = (0, express_1.Router)();
+router.get("/", mutualFundsController_1.listFunds);
+router.get("/analytics", mutualFundsController_1.getFundAnalytics);
+router.get("/:id", mutualFundsController_1.getFund);
+router.post("/", mutualFundsController_1.createFund);
+exports.default = router;
