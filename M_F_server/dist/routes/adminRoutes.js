@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const adminController_1 = require("../controllers/adminController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const router = (0, express_1.Router)();
+router.use(authMiddleware_1.requireAdmin);
+router.delete("/users/:id", adminController_1.deleteUser);
+router.patch("/users/:id/role", adminController_1.setUserRole);
+router.post("/mutual-funds", adminController_1.createFundAdmin);
+router.delete("/mutual-funds/:id", adminController_1.deleteFundAdmin);
+router.get("/transactions", adminController_1.listAllTransactionsAdmin);
+exports.default = router;
