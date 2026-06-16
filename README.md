@@ -100,8 +100,3 @@ npm run dev
 - `Router`: Stock, admin, and user route definitions.
 - `Stocks_Server`: Nested copy of the stock server entry/package files. It references folders that are present in the parent service, so prefer the parent `Stocks_Server` folder for development.
 
-## Notes
-
-- Both backend feature services default to port `3000`; use `PORT=3001` for `M_F_server` when running all services together.
-- `main_server` issues JWTs after authenticating against `M_F_server` and syncs new users to `Stocks_Server`.
-- Keep real secrets out of git. Use `.env` locally and `.env.example` for safe placeholders.
